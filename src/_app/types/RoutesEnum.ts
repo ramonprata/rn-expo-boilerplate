@@ -4,6 +4,6 @@ export enum MainStackRoutesEnum {
 }
 
 export enum MainTabsRoutesEnum {
-  HOME = "home",
-  EXPLORE = "explore",
+  HOME = "(home)/index",
+  EXPLORE = "(explore)/index",
 }

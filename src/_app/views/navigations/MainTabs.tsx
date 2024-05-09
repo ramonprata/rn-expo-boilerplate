@@ -3,7 +3,7 @@ import React from "react";
 
 import { TabBarIcon } from "@/components/navigation/TabBarIcon";
 import { Colors } from "@/constants/Colors";
-import { useColorScheme } from "@/hooks/useColorScheme";
+import { useColorScheme } from "@/src/shared/hooks/useColorScheme";
 import { MainTabsRoutesEnum } from "../../types";
 import { NAVIGATION_LABELS } from "../../utils";
 
@@ -46,4 +46,3 @@ export default function MainTabs() {
     </Tabs>
   );
 }
-

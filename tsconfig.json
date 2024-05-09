@@ -4,11 +4,11 @@
     "strict": true,
     "paths": {
       "@/*": ["./*"],
+      "@src": ["./src"],
       "@assets": ["./assets"],
-      "@shared/*": ["./src/shared"],
-      "@features/*": ["./src/features"]
+      "@shared": ["./src/shared/index.ts"],
+      "@features": ["./src/features/index.ts"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
 }
-

@@ -3,7 +3,7 @@ import { MainStackRoutesEnum } from "../../types";
 
 const MainStack = () => {
   return (
-    <Stack initialRouteName={MainStackRoutesEnum.TABS}>
+    <Stack>
       <Stack.Screen
         name={MainStackRoutesEnum.TABS}
         options={{ headerShown: false }}
