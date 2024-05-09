@@ -1,2 +1,2 @@
-import { MainTabs } from "@/src";
+import { MainTabs } from '@/src';
 export default MainTabs;

@@ -1,2 +1,2 @@
-import { ExploreScreen } from "@/src";
+import { ExploreScreen } from '@/src';
 export default ExploreScreen;

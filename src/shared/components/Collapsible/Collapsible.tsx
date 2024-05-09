@@ -1,33 +1,22 @@
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { PropsWithChildren, useState } from "react";
-import { StyleSheet, TouchableOpacity, useColorScheme } from "react-native";
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { PropsWithChildren, useState } from 'react';
+import { StyleSheet, TouchableOpacity, useColorScheme } from 'react-native';
 
-import ThemedText from "../ThemedText/ThemedText";
-import { ThemedView } from "@/src/shared/components/ThemedView/ThemedView";
-import { theme } from "@shared";
+import ThemedText from '../ThemedText/ThemedText';
+import { ThemedView } from '@/src/shared/components/ThemedView/ThemedView';
+import { theme } from '@shared';
 
-function Collapsible({
-  children,
-  title,
-}: PropsWithChildren & { title: string }) {
+function Collapsible({ children, title }: PropsWithChildren & { title: string }) {
   const [isOpen, setIsOpen] = useState(false);
-  const colorScheme = useColorScheme() ?? "light";
+  const colorScheme = useColorScheme() ?? 'light';
 
   return (
     <ThemedView>
-      <TouchableOpacity
-        style={styles.heading}
-        onPress={() => setIsOpen((value) => !value)}
-        activeOpacity={0.8}
-      >
+      <TouchableOpacity style={styles.heading} onPress={() => setIsOpen((value) => !value)} activeOpacity={0.8}>
         <Ionicons
-          name={isOpen ? "chevron-down" : "chevron-forward-outline"}
+          name={isOpen ? 'chevron-down' : 'chevron-forward-outline'}
           size={18}
-          color={
-            colorScheme === "light"
-              ? theme.colors.light.icon
-              : theme.colors.dark.icon
-          }
+          color={colorScheme === 'light' ? theme.colors.light.icon : theme.colors.dark.icon}
         />
         <ThemedText type="defaultSemiBold">{title}</ThemedText>
       </TouchableOpacity>
@@ -38,8 +27,8 @@ function Collapsible({
 
 const styles = StyleSheet.create({
   heading: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     gap: 6,
   },
   content: {
@@ -49,4 +38,3 @@ const styles = StyleSheet.create({
 });
 
 export default Collapsible;
-

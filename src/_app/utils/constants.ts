@@ -1,12 +1,12 @@
-import { MainTabsRoutesEnum } from "../types";
+import { MainTabsRoutesEnum } from '../types';
 
 export const NAVIGATION_LABELS = {
   tabs: {
     [MainTabsRoutesEnum.HOME]: {
-      title: "Home",
+      title: 'Home',
     },
     [MainTabsRoutesEnum.EXPLORE]: {
-      title: "Explore",
+      title: 'Explore',
     },
   },
 };

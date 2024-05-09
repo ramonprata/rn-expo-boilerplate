@@ -1,2 +1,2 @@
-import { HomeScreen } from "@/src";
+import { HomeScreen } from '@/src';
 export default HomeScreen;

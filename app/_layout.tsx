@@ -1,3 +1,2 @@
-import { RootLayout } from "@/src";
+import { RootLayout } from '@/src';
 export default RootLayout;
-

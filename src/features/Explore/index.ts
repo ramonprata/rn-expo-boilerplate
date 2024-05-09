@@ -1,1 +1,1 @@
-export { default as ExploreScreen } from "./views/ExploreScreen";
+export { default as ExploreScreen } from './views/ExploreScreen';
