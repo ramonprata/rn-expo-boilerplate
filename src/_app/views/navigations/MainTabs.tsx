@@ -1,7 +1,8 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
 
-import { TabBarIcon, theme } from '@shared';
+import { TabBarIcon } from '@shared/components';
+import { theme } from '@shared/theme';
 import { useColorScheme } from '@/src/shared/hooks/useColorScheme';
 import { MainTabsRoutesEnum } from '../../types';
 import { NAVIGATION_LABELS } from '../../utils';

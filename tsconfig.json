@@ -7,6 +7,9 @@
       "@src": ["./src"],
       "@assets": ["./assets"],
       "@shared": ["./src/shared/index.ts"],
+      "@shared/hooks": ["./src/shared/hooks/index.ts"],
+      "@shared/components": ["./src/shared/components/index.ts"],
+      "@shared/theme": ["./src/shared/theme/index.ts"],
       "@features": ["./src/features/index.ts"]
     }
   },
