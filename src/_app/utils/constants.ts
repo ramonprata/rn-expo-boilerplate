@@ -8,5 +8,8 @@ export const NAVIGATION_LABELS = {
     [MainTabsRoutesEnum.EXPLORE]: {
       title: 'Explore',
     },
+    [MainTabsRoutesEnum.DEMO]: {
+      title: 'Demo screen',
+    },
   },
 };

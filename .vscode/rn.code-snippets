@@ -1,0 +1,34 @@
+{
+  "React Native Functional Component": {
+    "prefix": "rnfc",
+    "body": [
+      "import React from 'react';",
+      "import { View, Text } from 'react-native';",
+      "",
+      "interface ${1:ComponentName}Props {}",
+      "",
+      "const ${1:ComponentName}: React.FC<${1:ComponentName}Props> = () => {",
+      "  return (",
+      "    <View>",
+      "      <Text>${2:Component}</Text>",
+      "    </View>",
+      "  );",
+      "};",
+      "",
+      "export default ${1:ComponentName};",
+    ],
+    "description": "Create a React Native functional component",
+  },
+  "React Native Styled Component": {
+    "prefix": "rnsc",
+    "body": [
+      "import styled from '@emotion/native';",
+      "import { View } from 'react-native';",
+      "",
+      "export const ${1:ComponentName} = styled(View)({",
+      "  ${2:/* styles here */}",
+      "});",
+    ],
+    "description": "Create a styled component for React Native",
+  },
+}

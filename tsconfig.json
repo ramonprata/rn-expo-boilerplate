@@ -10,6 +10,7 @@
       "@shared/hooks": ["./src/shared/hooks/index.ts"],
       "@shared/components": ["./src/shared/components/index.ts"],
       "@shared/theme": ["./src/shared/theme/index.ts"],
+      "@shared/types": ["./src/shared/types/index.ts"],
       "@features": ["./src/features/index.ts"]
     }
   },
