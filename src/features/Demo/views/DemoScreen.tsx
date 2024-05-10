@@ -1,13 +1,19 @@
 import React from 'react';
 import { ActivityIndicator, StyleSheet } from 'react-native';
-import { useLoadData } from '../hooks/useLoadData';
 import { ParallaxScrollView, ThemedText, ThemedView } from '@/src/shared/components';
 import { Ionicons } from '@expo/vector-icons';
+import { useQuery } from '@tanstack/react-query';
+import { DemoQueriesEnum } from '../types/DemoQueriesEnum';
+import DemoManageInstance from '../services';
 
 interface DemoScreenProps {}
 
 const DemoScreen: React.FC<DemoScreenProps> = () => {
-  const { data, error, isPending } = useLoadData();
+  const { data, error, isPending } = useQuery({
+    queryKey: [DemoQueriesEnum.programmingEnJoke],
+    queryFn: () => DemoManageInstance.getRandomJoke(),
+    staleTime: 300,
+  });
 
   const renderContent = () => {
     if (isPending) {
@@ -23,6 +29,7 @@ const DemoScreen: React.FC<DemoScreenProps> = () => {
           <ThemedText type="title">Explore</ThemedText>
         </ThemedView>
         <ThemedText>{data?.category}</ThemedText>
+        <ThemedText>{data?.type}</ThemedText>
         <ThemedText>{data?.delivery}</ThemedText>
       </>
     );

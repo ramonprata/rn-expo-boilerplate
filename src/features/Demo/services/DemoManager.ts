@@ -2,15 +2,16 @@ import { TErrorInfo } from '@/src/shared/types';
 import { IJokeDto } from '../types/IJokeDto';
 import { IDemoRepository } from '../types/IRepository';
 import { SERVER_ERROR_DICTIONARY } from '../utils';
+import { DemoRepository } from './DemoRepository';
 
 export class DemoManager {
-  repository: IDemoRepository;
+  public repository: IDemoRepository;
 
-  constructor(repo: IDemoRepository) {
-    this.repository = repo;
+  constructor(repo?: IDemoRepository) {
+    this.repository = repo || new DemoRepository();
   }
 
-  async getRandomJoke() {
+  public async getRandomJoke() {
     try {
       const response = await this.repository.fetchRandomJoke();
 
@@ -20,11 +21,14 @@ export class DemoManager {
       }
       return data;
     } catch (error) {
+      console.log('object:>>: ', error);
       this.handleError(SERVER_ERROR_DICTIONARY.unknown);
     }
   }
 
-  handleError(error: TErrorInfo) {
+  public handleError(error: TErrorInfo) {
     throw error;
   }
 }
+
+export default new DemoManager();
