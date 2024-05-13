@@ -9,7 +9,7 @@ export type TTextStyle = {
 };
 export type TTypography = {
   default: TTextStyle;
-  defaultSemiBold: TTextStyle;
+  btnText: TTextStyle;
   title: TTextStyle;
   subtitle: TTextStyle;
   link: TTextStyle;

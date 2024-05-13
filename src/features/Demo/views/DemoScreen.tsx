@@ -45,7 +45,7 @@ const DemoScreen: React.FC<DemoScreenProps> = () => {
       headerImage={<Ionicons size={310} name="code-slash" />}>
       <Content>
         <ViewContent flexRow gap={8}>
-          <Typography variant="title" color="primary">
+          <Typography variant="title" color="secondary">
             Wanna hear a Joke?
           </Typography>
         </ViewContent>
