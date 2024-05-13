@@ -1,7 +1,7 @@
 import styled from '@emotion/native';
 import { Image } from 'react-native';
 
-import { ThemedView } from '@/src/shared/components';
+import { ThemedView } from '@shared/components';
 
 export const TitleContainer = styled(ThemedView)({
   flexDirection: 'row',

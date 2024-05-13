@@ -1,4 +1,5 @@
 export enum MainStackRoutesEnum {
+  PUBLIC = '(public)',
   TABS = '(tabs)',
   NOT_FOUND = '+not-found',
 }
