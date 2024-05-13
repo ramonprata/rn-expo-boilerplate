@@ -1,36 +1,41 @@
 import React from 'react';
-import { ActivityIndicator, StyleSheet } from 'react-native';
-import { ParallaxScrollView, ThemedText, ThemedView } from '@/src/shared/components';
+import { ParallaxScrollView, Typography, ViewContent } from '@shared/components';
 import { Ionicons } from '@expo/vector-icons';
-import { useQuery } from '@tanstack/react-query';
-import { DemoQueriesEnum } from '../types/DemoQueriesEnum';
-import DemoManageInstance from '../services';
+
+import { useLoadData } from '../hooks/useLoadData';
+import { Button, Content } from './styles/DemoScreen.styled';
 
 interface DemoScreenProps {}
 
 const DemoScreen: React.FC<DemoScreenProps> = () => {
-  const { data, error, isPending } = useQuery({
-    queryKey: [DemoQueriesEnum.programmingEnJoke],
-    queryFn: () => DemoManageInstance.getRandomJoke(),
-    staleTime: 300,
-  });
+  const { data, refetch, loading } = useLoadData();
 
   const renderContent = () => {
-    if (isPending) {
+    if (loading) {
       return (
-        <ThemedView>
-          <ActivityIndicator />
-        </ThemedView>
+        <ViewContent>
+          <Typography>Loading a new joke</Typography>
+        </ViewContent>
       );
     }
     return (
       <>
-        <ThemedView style={styles.titleContainer}>
-          <ThemedText type="title">Explore</ThemedText>
-        </ThemedView>
-        <ThemedText>{data?.category}</ThemedText>
-        <ThemedText>{data?.type}</ThemedText>
-        <ThemedText>{data?.delivery}</ThemedText>
+        <ViewContent flexRow centerY>
+          <Typography variant="subtitle" color="textSecondary">
+            category:{' '}
+          </Typography>
+          <Typography>{data?.category}</Typography>
+        </ViewContent>
+        <ViewContent flexRow centerY>
+          <Typography variant="subtitle" color="textSecondary">
+            type:{' '}
+          </Typography>
+          <Typography>{data?.type}</Typography>
+        </ViewContent>
+        <Typography variant="subtitle" color="textSecondary">
+          It goes like..
+        </Typography>
+        <Typography>{data?.delivery}</Typography>
       </>
     );
   };
@@ -38,22 +43,20 @@ const DemoScreen: React.FC<DemoScreenProps> = () => {
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
       headerImage={<Ionicons size={310} name="code-slash" />}>
-      {renderContent()}
+      <Content>
+        <ViewContent flexRow gap={8}>
+          <Typography variant="title" color="primary">
+            Wanna hear a Joke?
+          </Typography>
+        </ViewContent>
+        {renderContent()}
+      </Content>
+      <Button onPress={() => refetch()} flexRow gap={8} center>
+        <Typography applyColorSchema>Get a new joke</Typography>
+        <Ionicons size={24} name="reload" />
+      </Button>
     </ParallaxScrollView>
   );
 };
-
-const styles = StyleSheet.create({
-  headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
-    position: 'absolute',
-  },
-  titleContainer: {
-    flexDirection: 'row',
-    gap: 8,
-  },
-});
 
 export default DemoScreen;

@@ -4,13 +4,14 @@ import { DemoManager } from '../services/DemoManager';
 
 export const useLoadData = () => {
   const DemoManageInstance = new DemoManager();
-  const { data, error, isPending } = useQuery({
+  const { data, error, isPending, isFetching, refetch } = useQuery({
     queryKey: [DemoQueriesEnum.programmingEnJoke],
-    queryFn: DemoManageInstance.getRandomJoke,
+    queryFn: () => DemoManageInstance.getRandomJoke(),
   });
   return {
     data,
     error,
-    isPending,
+    loading: isPending || isFetching,
+    refetch,
   };
 };

@@ -1,20 +1,31 @@
+import { CSSProperties } from 'react';
+
+export type TTextStyle = {
+  fontSize: CSSProperties['fontSize'];
+  fontWeight?: CSSProperties['fontWeight'];
+  lineHeight?: CSSProperties['lineHeight'];
+  lightColor?: string;
+  darkColor?: string;
+};
 export type TTypography = {
-  [key: string]: {
-    fontSize: number;
-    color?: string;
-    fontWeight?: string;
-    lineHeight?: number;
-  };
+  default: TTextStyle;
+  defaultSemiBold: TTextStyle;
+  title: TTextStyle;
+  subtitle: TTextStyle;
+  link: TTextStyle;
 };
 
 export type TColors = {
-  tintColor: string;
-  tint: string;
-  text: string;
   background: string;
   icon: string;
+  primary: string;
+  secondary: string;
+  textPrimary: string;
+  textSecondary: string;
   tabIconDefault: string;
   tabIconSelected: string;
+  tint: string;
+  tintColor: string;
 };
 
 export type TColorScheme = {

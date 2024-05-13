@@ -2,27 +2,33 @@ import { TColorScheme, TTypography } from './TTheme';
 
 export const colors: TColorScheme = {
   light: {
-    tintColor: '#0a7ea4',
-    text: '#11181C',
     background: '#fff',
     icon: '#687076',
-    tabIconDefault: '#687076',
+    primary: '#000',
+    secondary: '#000',
+    tintColor: '#0a7ea4',
     get tint() {
       return this.tintColor;
     },
+    textPrimary: 'orange',
+    textSecondary: 'green',
+    tabIconDefault: '#687076',
     get tabIconSelected() {
       return this.tintColor;
     },
   },
   dark: {
-    tintColor: '#fff',
-    text: '#ECEDEE',
     background: '#151718',
     icon: '#9BA1A6',
-    tabIconDefault: '#9BA1A6',
+    primary: '#000',
+    secondary: '#000',
+    tintColor: '#fff',
     get tint() {
       return this.tintColor;
     },
+    textPrimary: 'pink',
+    textSecondary: 'violet',
+    tabIconDefault: '#9BA1A6',
     get tabIconSelected() {
       return this.tintColor;
     },
@@ -51,7 +57,6 @@ export const typography: TTypography = {
   link: {
     lineHeight: 30,
     fontSize: 16,
-    color: '#0a7ea4',
   },
 };
 

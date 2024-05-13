@@ -10,6 +10,7 @@ export const Container = styled(ThemedView)({
 export const AnimatedHeader = styled(Animated.View)({
   height: 250,
   overflow: 'hidden',
+  flex: 1,
 });
 
 export const Content = styled(ThemedView)({
