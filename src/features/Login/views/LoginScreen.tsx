@@ -1,18 +1,23 @@
 import React from 'react';
-import { ViewContent, Typography, Pressable } from '@shared/components';
-import { useAuth } from '@/src/_app';
+import { ViewContent, Typography, Button } from '@shared/components';
+import { useAuthContext } from '../../Auth/context/AuthContext';
+import { router } from 'expo-router';
+import { MainStackRoutesEnum } from '@/src/_app/types';
 
 interface LoginScreenProps {}
 
 const LoginScreen: React.FC<LoginScreenProps> = () => {
-  const { mutation } = useAuth();
+  const { signIn } = useAuthContext();
+
+  const handlePress = async (userEmail: string, psw: string) => {
+    await signIn(userEmail, psw);
+    router.navigate(MainStackRoutesEnum.PUBLIC_INTRO);
+  };
 
   return (
     <ViewContent center>
       <Typography>LoginScreen</Typography>
-      <Pressable onPress={() => mutation.mutate({ userEmail: 'user.email', psw: '1234856' })}>
-        <Typography>Login</Typography>
-      </Pressable>
+      <Button onPress={() => handlePress('user', 'password')} title="Login" />
     </ViewContent>
   );
 };

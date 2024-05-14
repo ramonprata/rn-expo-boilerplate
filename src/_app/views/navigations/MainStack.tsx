@@ -1,17 +1,17 @@
-import { Redirect, Stack, usePathname } from 'expo-router';
+import { Redirect, Stack } from 'expo-router';
 import { MainStackRoutesEnum } from '../../types';
-import { useAuth } from '../../hooks/useAuth';
-import { Typography, ViewContent } from '@/src/shared/components';
+import { useAuthContext } from '@/src/features/Auth/context/AuthContext';
+import { Typography } from '@/src/shared/components';
 
 const MainStack = () => {
-  const { shouldRedirectLogin, loading, userAuthenticated } = useAuth();
+  const { loading, token } = useAuthContext();
 
   if (loading) {
-    return (
-      <ViewContent center>
-        <Typography>Loading...</Typography>
-      </ViewContent>
-    );
+    return <Typography>Loading...</Typography>;
+  }
+
+  if (!loading && !token) {
+    return <Redirect href={MainStackRoutesEnum.PUBLIC_LOGIN} />;
   }
 
   return (
@@ -21,7 +21,6 @@ const MainStack = () => {
       }}>
       <Stack.Screen name={MainStackRoutesEnum.PUBLIC_INTRO} options={{ headerShown: false }} />
       <Stack.Screen name={MainStackRoutesEnum.PUBLIC_TERMS} options={{ headerShown: false }} />
-      <Stack.Screen name={MainStackRoutesEnum.TABS} options={{ headerShown: false }} />
     </Stack>
   );
 };

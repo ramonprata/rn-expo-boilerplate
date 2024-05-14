@@ -2,7 +2,6 @@ export enum MainStackRoutesEnum {
   PUBLIC_LOGIN = 'login',
   PUBLIC_INTRO = 'intro',
   PUBLIC_TERMS = 'terms',
-  TABS = 'tabs',
   NOT_FOUND = '+not-found',
 }
 
