@@ -6,13 +6,14 @@ import ThemedView from '../ThemedView/ThemedView';
 import { theme } from '../../theme/theme';
 import * as Styled from './Collapsible.styled';
 import Typography from '../Typography/Typography';
+import ViewContent from '../ViewContent/ViewContent';
 
 function Collapsible({ children, title }: PropsWithChildren & { title: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const colorScheme = useColorScheme() ?? 'light';
 
   return (
-    <ThemedView>
+    <ViewContent>
       <Styled.Heading onPress={() => setIsOpen((value) => !value)} activeOpacity={0.8}>
         <Ionicons
           name={isOpen ? 'chevron-down' : 'chevron-forward-outline'}
@@ -22,7 +23,7 @@ function Collapsible({ children, title }: PropsWithChildren & { title: string })
         <Typography>{title}</Typography>
       </Styled.Heading>
       {isOpen && <Styled.Content>{children}</Styled.Content>}
-    </ThemedView>
+    </ViewContent>
   );
 }
 
