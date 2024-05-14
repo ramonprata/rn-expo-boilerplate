@@ -21,6 +21,7 @@ const MainStack = () => {
       }}>
       <Stack.Screen name={MainStackRoutesEnum.PUBLIC_INTRO} options={{ headerShown: false }} />
       <Stack.Screen name={MainStackRoutesEnum.PUBLIC_TERMS} options={{ headerShown: false }} />
+      <Stack.Screen name={MainStackRoutesEnum.TABS} options={{ headerShown: false }} />
     </Stack>
   );
 };
