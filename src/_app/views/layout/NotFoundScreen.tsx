@@ -1,5 +1,5 @@
 import { Stack } from 'expo-router';
-import { ThemedText } from '@shared/components';
+import { Typography } from '@shared/components';
 import * as Styled from '../styles/NotFoundScreen.styled';
 
 export default function NotFoundScreen() {
@@ -7,9 +7,9 @@ export default function NotFoundScreen() {
     <>
       <Stack.Screen options={{ title: 'Oops!' }} />
       <Styled.Container>
-        <ThemedText type="title">This screen doesn't exist.</ThemedText>
+        <Typography variant="title">This screen doesn't exist.</Typography>
         <Styled.Link href="/">
-          <ThemedText type="link">Go to home screen!</ThemedText>
+          <Typography variant="link">Go to home screen!</Typography>
         </Styled.Link>
       </Styled.Container>
     </>

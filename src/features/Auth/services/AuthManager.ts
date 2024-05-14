@@ -17,7 +17,6 @@ export class AuthManager {
   async getUserToken() {
     const token = await Storage.getUserToken();
     return token;
-    // return null;
   }
 
   async saveUserToken(token: string) {
