@@ -38,9 +38,7 @@ export default function MainTabs() {
         name={MainTabsRoutesEnum.DEMO}
         options={{
           title: NAVIGATION_LABELS.tabs[MainTabsRoutesEnum.DEMO].title,
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
-          ),
+          tabBarIcon: ({ color, focused }) => <TabBarIcon name={focused ? 'search' : 'search'} color={color} />,
         }}
       />
     </Tabs>

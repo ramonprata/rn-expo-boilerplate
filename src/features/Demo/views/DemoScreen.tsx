@@ -35,6 +35,7 @@ const DemoScreen: React.FC<DemoScreenProps> = () => {
         <Typography variant="subtitle" color="textSecondary">
           It goes like..
         </Typography>
+        <Typography>{data?.setup}</Typography>
         <Typography>{data?.delivery}</Typography>
       </>
     );

@@ -1,5 +1,5 @@
 import { AuthContext } from '../context/AuthContext';
-import { usePersistToken } from '../hooks/useStorage';
+import { usePersistToken } from '../hooks/usePersistToken';
 import AuthManager from '../services';
 
 export function AuthProvider(props: React.PropsWithChildren) {
@@ -10,7 +10,6 @@ export function AuthProvider(props: React.PropsWithChildren) {
       const token = await AuthManager.authenticate(userEmail, psw);
       setToken(token);
     } catch (error) {
-      console.log('object:>>: ', error);
       // render error screen instead of children
     }
   };

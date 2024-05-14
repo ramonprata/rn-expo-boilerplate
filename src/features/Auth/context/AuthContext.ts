@@ -12,7 +12,6 @@ export const AuthContext = React.createContext<{
   loading: false,
 });
 
-// This hook can be used to access the user info.
 export function useAuthContext() {
   const value = React.useContext(AuthContext);
 
