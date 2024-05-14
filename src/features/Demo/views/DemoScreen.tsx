@@ -3,7 +3,7 @@ import { ParallaxScrollView, Typography, ViewContent } from '@shared/components'
 import { Ionicons } from '@expo/vector-icons';
 
 import { useLoadData } from '../hooks/useLoadData';
-import { Button, Content } from './styles/DemoScreen.styled';
+import { Button, Content, IoniconHeader } from './styles/DemoScreen.styled';
 
 interface DemoScreenProps {}
 
@@ -43,7 +43,7 @@ const DemoScreen: React.FC<DemoScreenProps> = () => {
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={<Ionicons size={310} name="code-slash" />}>
+      headerImage={<IoniconHeader size={310} name="code-slash" />}>
       <Content>
         <ViewContent flexRow gap={8}>
           <Typography variant="title" color="secondary">
