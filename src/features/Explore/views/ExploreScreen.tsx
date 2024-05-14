@@ -1,16 +1,16 @@
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { StyleSheet, Image, Platform } from 'react-native';
+import { Image, Platform } from 'react-native';
 
-import { Collapsible, Typography, ThemedView, ExternalLink, ParallaxScrollView } from '@shared/components';
+import { Collapsible, Typography, ExternalLink, ParallaxScrollView, ViewContent } from '@shared/components';
+import { IoniconHeader } from './styles/ExploreScreen.styled';
 
 export default function ExploreScreen() {
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={<Ionicons size={310} name="code-slash" style={styles.headerImage} />}>
-      <ThemedView style={styles.titleContainer}>
+      headerImage={<IoniconHeader size={310} name="code-slash" />}>
+      <ViewContent flexRow gap={8}>
         <Typography variant="title">Explore</Typography>
-      </ThemedView>
+      </ViewContent>
       <Typography>This app includes example code to help you get started.</Typography>
       <Collapsible title="File-based routing">
         <Typography>
@@ -77,16 +77,3 @@ export default function ExploreScreen() {
     </ParallaxScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
-    position: 'absolute',
-  },
-  titleContainer: {
-    flexDirection: 'row',
-    gap: 8,
-  },
-});
