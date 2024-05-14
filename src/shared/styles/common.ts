@@ -4,6 +4,7 @@ export interface ICommonStyledProps {
   centerY?: boolean;
   flexRow?: boolean;
   gap?: number;
+  flex?: number;
 }
 export const buildStyledProps = (props?: ICommonStyledProps) => {
   return {
@@ -12,5 +13,6 @@ export const buildStyledProps = (props?: ICommonStyledProps) => {
     ...(props?.center && { justifyContent: 'center', alignItems: 'center' }),
     ...(props?.flexRow && { flexDirection: 'row' }),
     ...(props?.gap && { gap: props.gap }),
+    flex: props?.flex ?? 1,
   };
 };

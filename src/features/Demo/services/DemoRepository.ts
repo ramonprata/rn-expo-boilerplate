@@ -1,4 +1,4 @@
-import { IDemoRepository } from '../types/IRepository';
+import { IDemoRepository } from '../types/IDemoRepository';
 
 export class DemoRepository implements IDemoRepository {
   constructor() {}

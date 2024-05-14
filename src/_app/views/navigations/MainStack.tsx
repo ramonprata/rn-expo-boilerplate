@@ -1,22 +1,26 @@
-import { Stack } from 'expo-router';
+import { Redirect, Stack, usePathname } from 'expo-router';
 import { MainStackRoutesEnum } from '../../types';
 import { useAuth } from '../../hooks/useAuth';
+import { Typography, ViewContent } from '@/src/shared/components';
 
 const MainStack = () => {
-  const { isUserAuthenticated } = useAuth();
+  const { shouldRedirectLogin, loading, userAuthenticated } = useAuth();
 
-  const renderMainScreen = () => {
-    if (isUserAuthenticated) {
-      return <Stack.Screen name={MainStackRoutesEnum.TABS} options={{ headerShown: false }} />;
-    }
-
-    return <Stack.Screen name={MainStackRoutesEnum.PUBLIC} options={{ headerShown: false }} />;
-  };
+  if (loading) {
+    return (
+      <ViewContent center>
+        <Typography>Loading...</Typography>
+      </ViewContent>
+    );
+  }
 
   return (
-    <Stack>
-      {renderMainScreen()}
-      <Stack.Screen name={MainStackRoutesEnum.NOT_FOUND} />
+    <Stack
+      screenOptions={{
+        header: () => null,
+      }}>
+      <Stack.Screen name={MainStackRoutesEnum.PUBLIC_INTRO} options={{ headerShown: false }} />
+      <Stack.Screen name={MainStackRoutesEnum.PUBLIC_TERMS} options={{ headerShown: false }} />
     </Stack>
   );
 };

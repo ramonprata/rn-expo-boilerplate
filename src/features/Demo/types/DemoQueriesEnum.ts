@@ -1,3 +1,3 @@
 export enum DemoQueriesEnum {
-  programmingEnJoke = 'demo-joke-en-programming',
+  getRandomJoke = 'get-random-joke',
 }

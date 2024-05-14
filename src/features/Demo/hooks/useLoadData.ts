@@ -4,7 +4,7 @@ import DemoManageInstance from '../services/index';
 
 export const useLoadData = () => {
   const { data, error, isPending, isFetching, refetch } = useQuery({
-    queryKey: [DemoQueriesEnum.programmingEnJoke],
+    queryKey: [DemoQueriesEnum.getRandomJoke],
     queryFn: () => DemoManageInstance.getRandomJoke(),
   });
   return {

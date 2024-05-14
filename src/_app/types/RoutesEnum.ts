@@ -1,11 +1,13 @@
 export enum MainStackRoutesEnum {
-  PUBLIC = '(public)',
-  TABS = '(tabs)',
+  PUBLIC_LOGIN = 'login',
+  PUBLIC_INTRO = 'intro',
+  PUBLIC_TERMS = 'terms',
+  TABS = 'tabs',
   NOT_FOUND = '+not-found',
 }
 
 export enum MainTabsRoutesEnum {
-  HOME = '(home)/index',
-  EXPLORE = '(explore)/index',
-  DEMO = '(demo)/index',
+  HOME = 'home',
+  EXPLORE = 'explore',
+  DEMO = 'demo',
 }

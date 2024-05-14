@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider, useQueryClient } from '@tanstack/reac
 
 import MainStack from '../navigations/MainStack';
 import { useLoadFonts, useColorScheme } from '@shared/hooks';
+import { Slot } from 'expo-router';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();

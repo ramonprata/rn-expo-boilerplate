@@ -1,6 +1,6 @@
 import { TErrorInfo } from '@/src/shared/types';
 import { IJokeDto } from '../types/IJokeDto';
-import { IDemoRepository } from '../types/IRepository';
+import { IDemoRepository } from '../types/IDemoRepository';
 import { SERVER_ERROR_DICTIONARY } from '../utils';
 import { DemoRepository } from './DemoRepository';
 

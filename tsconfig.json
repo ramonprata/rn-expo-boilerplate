@@ -11,7 +11,9 @@
       "@shared/components": ["./src/shared/components/index.ts"],
       "@shared/theme": ["./src/shared/theme/index.ts"],
       "@shared/types": ["./src/shared/types/index.ts"],
-      "@features": ["./src/features/index.ts"]
+      "@shared/utils": ["./src/shared/utils/index.ts"],
+      "@features": ["./src/features/index.ts"],
+      "@features/*": ["./src/features/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
