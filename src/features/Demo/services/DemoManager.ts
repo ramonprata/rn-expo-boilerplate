@@ -1,7 +1,7 @@
 import { TErrorInfo } from '@/src/shared/types';
 import { IJokeDto } from '../types/IJokeDto';
 import { IDemoRepository } from '../types/IDemoRepository';
-import { SERVER_ERROR_DICTIONARY } from '../utils';
+import { SERVER_ERROR_DICTIONARY } from '../utils/constants';
 import { DemoRepository } from './DemoRepository';
 
 export class DemoManager {
@@ -21,7 +21,6 @@ export class DemoManager {
       }
       return data;
     } catch (error) {
-      console.log('object:>>: ', error);
       this.handleError(SERVER_ERROR_DICTIONARY.unknown);
     }
   }

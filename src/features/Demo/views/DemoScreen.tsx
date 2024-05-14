@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 import { useLoadData } from '../hooks/useLoadData';
 import { Button, Content, IoniconHeader } from './styles/DemoScreen.styled';
+import { DEMO_FEAT_TEXTS } from '../utils/constants';
 
 interface DemoScreenProps {}
 
@@ -14,7 +15,7 @@ const DemoScreen: React.FC<DemoScreenProps> = () => {
     if (loading) {
       return (
         <ViewContent>
-          <Typography>Loading a new joke</Typography>
+          <Typography>{DEMO_FEAT_TEXTS.txtLoadingJoke}</Typography>
         </ViewContent>
       );
     }
@@ -22,18 +23,18 @@ const DemoScreen: React.FC<DemoScreenProps> = () => {
       <>
         <ViewContent flexRow centerY>
           <Typography variant="subtitle" color="textSecondary">
-            category:{' '}
+            {`${DEMO_FEAT_TEXTS.labelCategory}: `}
           </Typography>
           <Typography>{data?.category}</Typography>
         </ViewContent>
         <ViewContent flexRow centerY>
           <Typography variant="subtitle" color="textSecondary">
-            type:{' '}
+            type: {`${DEMO_FEAT_TEXTS.labelCategory}: `}
           </Typography>
           <Typography>{data?.type}</Typography>
         </ViewContent>
         <Typography variant="subtitle" color="textSecondary">
-          It goes like..
+          {DEMO_FEAT_TEXTS.txtGoesLike}
         </Typography>
         <Typography>{data?.setup}</Typography>
         <Typography>{data?.delivery}</Typography>
@@ -47,13 +48,13 @@ const DemoScreen: React.FC<DemoScreenProps> = () => {
       <Content>
         <ViewContent flexRow gap={8}>
           <Typography variant="title" color="secondary">
-            Wanna hear a Joke?
+            {DEMO_FEAT_TEXTS.txtHearJoke}
           </Typography>
         </ViewContent>
         {renderContent()}
       </Content>
       <Button onPress={() => refetch()} flexRow gap={8} center>
-        <Typography applyColorSchema>Get a new joke</Typography>
+        <Typography applyColorSchema>{DEMO_FEAT_TEXTS.btnGetJoke}</Typography>
         <Ionicons size={24} name="reload" />
       </Button>
     </ParallaxScrollView>
