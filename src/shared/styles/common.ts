@@ -5,6 +5,7 @@ export interface ICommonStyledProps {
   flexRow?: boolean;
   gap?: number;
   flex?: number;
+  bg?: string;
 }
 export const buildStyledProps = (props?: ICommonStyledProps) => {
   return {
@@ -14,5 +15,6 @@ export const buildStyledProps = (props?: ICommonStyledProps) => {
     ...(props?.flexRow && { flexDirection: 'row' }),
     ...(props?.gap && { gap: props.gap }),
     flex: props?.flex ?? 1,
+    backgroundColor: props?.bg ?? '',
   };
 };

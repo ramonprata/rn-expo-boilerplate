@@ -1,10 +1,11 @@
 import styled from '@emotion/native';
 import { Animated } from 'react-native';
 import { StyleSheet } from 'react-native';
-import ThemedView from '../ThemedView/ThemedView';
+import ViewContent from '../ViewContent/ViewContent';
 
-export const Container = styled(ThemedView)({
+export const Container = styled(ViewContent)({
   flex: 1,
+  backgroundColor: '#fff',
 });
 
 export const AnimatedHeader = styled(Animated.View)({
@@ -13,11 +14,12 @@ export const AnimatedHeader = styled(Animated.View)({
   flex: 1,
 });
 
-export const Content = styled(ThemedView)({
+export const Content = styled(ViewContent)({
   flex: 1,
   padding: 32,
   gap: 16,
   overflow: 'hidden',
+  backgroundColor: '#fff',
 });
 
 export const styles = StyleSheet.create({
